@@ -1,0 +1,265 @@
+/** 
+* NO TOCAR ESTE ARCHIVO: Es generado automaticamente, si sabes lo que haces adelante ;)
+* de lo contrario mejor ir a la documentacion o al servidor de discord link.codigoencasa.com/DISCORD
+*/
+'use strict';
+
+var require$$0$1 = require('@bot-whatsapp/bot');
+var require$$1$1 = require('venom-bot');
+var require$$0 = require('fs');
+var require$$3$1 = require('console');
+var require$$1 = require('os');
+var require$$2 = require('http');
+var require$$3 = require('https');
+var require$$4 = require('combine-image');
+
+const { writeFile, createWriteStream: createWriteStream$1 } = require$$0;
+const { tmpdir } = require$$1;
+const http = require$$2;
+const https = require$$3;
+const combineImage = require$$4;
+
+const venomCleanNumber$1 = (number, full = false) => {
+    number = number.replace('@c.us', '');
+    number = !full ? `${number}@c.us` : `${number}`;
+    return number
+};
+
+const venomGenerateImage$1 = async (base, name = 'qr.png') => {
+    const PATH_QR = `${process.cwd()}/${name}`;
+    const matches = base.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    if (matches.length !== 3) {
+        return new Error('Invalid input string')
+    }
+
+    let response = {};
+    response.type = matches[1];
+    response.data = new Buffer.from(matches[2], 'base64');
+
+    const writeFilePromise = () =>
+        new Promise((resolve, reject) => {
+            writeFile(PATH_QR, response['data'], 'binary', (err) => {
+                if (err != null) reject('ERROR_QR_GENERATE');
+                resolve(true);
+            });
+        });
+
+    await writeFilePromise();
+
+    const cleanImage = await combineImage([PATH_QR], {
+        margin: 15,
+        color: 0xffffffff,
+    });
+    cleanImage.write(PATH_QR);
+};
+
+/**
+ * Incompleta
+ * Descargar archivo multimedia para enviar
+ * @param {*} url
+ * @returns
+ */
+const venomDownloadMedia$1 = (url) => {
+    return new Promise((resolve, reject) => {
+        const ext = url.split('.').pop();
+        const checkProtocol = url.includes('https:');
+        const handleHttp = checkProtocol ? https : http;
+        const name = `tmp-${Date.now()}.${ext}`;
+        const fullPath = `${tmpdir()}/${name}`;
+        const file = createWriteStream$1(fullPath);
+        handleHttp.get(url, function (response) {
+            response.pipe(file);
+            file.on('finish', function () {
+                file.close();
+                resolve(fullPath);
+            });
+            file.on('error', function () {
+                console.log('errro');
+                file.close();
+                reject(null);
+            });
+        });
+    })
+};
+
+const venomisValidNumber$1 = (rawNumber) => {
+    const regexGroup = /\@g.us\b/gm;
+    const exist = rawNumber.match(regexGroup);
+    return !exist
+};
+var utils = {
+    venomCleanNumber: venomCleanNumber$1,
+    venomGenerateImage: venomGenerateImage$1,
+    venomisValidNumber: venomisValidNumber$1,
+    venomDownloadMedia: venomDownloadMedia$1,
+};
+
+const { ProviderClass } = require$$0$1;
+const venom = require$$1$1;
+const { createWriteStream } = require$$0;
+const { Console } = require$$3$1;
+
+const {
+    venomCleanNumber,
+    venomGenerateImage,
+    venomisValidNumber,
+    venomDownloadMedia,
+} = utils;
+
+const logger = new Console({
+    stdout: createWriteStream(`${process.cwd()}/venom.log`),
+});
+
+/**
+ * ⚙️ VenomProvider: Es una clase tipo adaptor
+ * que extiende clases de ProviderClass (la cual es como interfaz para sber que funciones rqueridas)
+ * https://github.com/orkestral/venom
+ */
+class VenomProvider extends ProviderClass {
+    globalVendorArgs = { name: `bot` }
+    vendor
+    constructor(args) {
+        super();
+        this.globalVendorArgs = { ...this.globalVendorArgs, ...args };
+        this.init().then(() => this.initBusEvents());
+    }
+
+    /**
+     * Iniciamos el Proveedor Venom
+     */
+    init = async () => {
+        const NAME_DIR_SESSION = `${this.globalVendorArgs.name}_sessions`;
+        try {
+            const client = await venom.create(
+                {
+                    session: NAME_DIR_SESSION,
+                    multidevice: true,
+                    disableSpins: true,
+                    disableWelcome: true,
+                    logger,
+                    logQR: false,
+                },
+                (base) => this.generateQr(base),
+                undefined
+            );
+            this.vendor = client;
+        } catch (e) {
+            logger.log(e);
+            this.emit('auth_failure', {
+                instructions: [
+                    `Ocurrio un error con la inicializacion de venom`,
+                    `Reinicia el BOT`,
+                    `Tambien puedes mirar un log que se ha creado venom.log`,
+                    `(Puedes abrir un ISSUE) https://github.com/codigoencasa/bot-whatsapp/issues/new/choose`,
+                ],
+            });
+        }
+    }
+
+    /**
+     * Generamos QR Code pra escanear con el Whatsapp
+     */
+    generateQr = async (qr) => {
+        console.clear();
+        this.emit('require_action', {
+            instructions: [
+                `Debes escanear el QR Code para iniciar ${this.globalVendorArgs.name}.qr.png`,
+                `Recuerda que el QR se actualiza cada minuto `,
+                `Necesitas ayuda: https://link.codigoencasa.com/DISCORD`,
+            ],
+        });
+        await venomGenerateImage(qr, `${this.globalVendorArgs.name}.qr.png`);
+    }
+
+    /**
+     * Mapeamos los eventos nativos de  https://docs.orkestral.io/venom/#/?id=events
+     * para tener un standar de eventos
+     * @returns
+     */
+    busEvents = () => [
+        {
+            event: 'onMessage',
+            func: (payload) => {
+                if (payload.from === 'status@broadcast') {
+                    return
+                }
+
+                if (!venomisValidNumber(payload.from)) {
+                    return
+                }
+                payload.from = venomCleanNumber(payload.from, true);
+                this.emit('message', payload);
+            },
+        },
+    ]
+
+    /**
+     * Iniciamos y mapeamos el BusEvent
+     * Ejemplo:
+     * this.vendor.onMessage() 👉 this.vendor["onMessage"]()
+     */
+    initBusEvents = () => {
+        const listEvents = this.busEvents();
+
+        for (const { event, func } of listEvents) {
+            if (this.vendor[event])
+                this.vendor[event]((payload) => func(payload));
+        }
+    }
+
+    /**
+     * Enviar botones
+     * @private
+     * @param {*} number
+     * @param {*} message
+     * @param {*} buttons []
+     * @returns
+     */
+    sendButtons = async (number, message, buttons = []) => {
+        const NOTE_VENOM_BUTTON = [
+            `Actualmente VENOM tiene problemas con la API`,
+            `para el envio de Botones`,
+        ].join('\n');
+
+        console.log(`[NOTA]: ${NOTE_VENOM_BUTTON}`);
+
+        const buttonToStr = [message]
+            .concat(buttons.map((btn) => `${btn.body}`))
+            .join(`\n`);
+        return this.vendor.sendText(number, buttonToStr)
+        // return this.vendor.sendButtons(number, "Title", buttons1, "Description");
+    }
+
+    /**
+     * Enviar imagen o multimedia
+     * @param {*} number
+     * @param {*} mediaInput
+     * @param {*} message
+     * @returns
+     */
+    sendMedia = async (number, mediaInput, message) => {
+        if (!mediaInput) throw new Error(`NO_SE_ENCONTRO: ${mediaInput}`)
+        const fileDownloaded = await venomDownloadMedia(mediaInput);
+        return this.vendor.sendImage(number, fileDownloaded, '.', message)
+    }
+
+    /**
+     * Enviar mensaje al usuario
+     * @param {*} userId
+     * @param {*} message
+     * @param {*} param2
+     * @returns
+     */
+    sendMessage = async (userId, message, { options }) => {
+        const number = venomCleanNumber(userId);
+        if (options?.buttons?.length)
+            return this.sendButtons(number, message, options.buttons)
+        if (options?.media)
+            return this.sendMedia(number, options.media, message)
+        return this.vendor.sendText(number, message)
+    }
+}
+
+var venom_1 = VenomProvider;
+
+module.exports = venom_1;

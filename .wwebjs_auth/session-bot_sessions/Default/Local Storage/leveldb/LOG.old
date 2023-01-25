@@ -1,0 +1,6 @@
+2023/01/24-23:09:33.200 ae58 Reusing MANIFEST C:\Users\joeln\OneDrive\Escritorio\base-wweb-memory\.wwebjs_auth\session-bot_sessions\Default\Local Storage\leveldb/MANIFEST-000001
+2023/01/24-23:09:33.201 ae58 Recovering log #30
+2023/01/24-23:09:33.201 ae58 Reusing old log C:\Users\joeln\OneDrive\Escritorio\base-wweb-memory\.wwebjs_auth\session-bot_sessions\Default\Local Storage\leveldb/000030.log 
+2023/01/25-10:01:12.131 ae58 Level-0 table #34: started
+2023/01/25-10:01:12.134 ae58 Level-0 table #34: 10937 bytes OK
+2023/01/25-10:01:12.136 ae58 Delete type=0 #30

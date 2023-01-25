@@ -1,0 +1,30 @@
+{
+  "name": "base-wweb-memory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "pre-copy": "cd .. && yarn run copy.lib base-wweb-memory",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "localModules": "cp -r ../modules/* node_modules",
+    "pm2": "pm2 start app.js --exp-backoff-restart-delay=100",
+    "pm2-docker": "pm2-runtime start app.js --exp-backoff-restart-delay=100"
+  },
+  "keywords": [],
+  "dependencies": {
+    "axios": "^1.2.3",
+    "pm2": "^5.2.2",
+    "whatsapp-web.js": "1.19.2",
+    "@bot-whatsapp/bot": "latest",
+    "@bot-whatsapp/cli": "latest",
+    "@bot-whatsapp/database": "latest",
+    "@bot-whatsapp/provider": "latest",
+    "@bot-whatsapp/portal": "latest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
