@@ -23,6 +23,6 @@ RUN npm install puppeteer@10.0.0
 RUN npm install
 
 # copiar el contenido de la carpeta modules a la carpeta node_modules
-RUN cp -r modules node_modules
+COPY ./modules ./node_modules
 
 CMD ["npm", "start"]
