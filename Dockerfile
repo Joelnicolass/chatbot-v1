@@ -18,7 +18,11 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 
 # Puppeteer v10.0.0 works with Chromium 92.
 COPY . .
+
 RUN npm install puppeteer@10.0.0
 RUN npm install
+
+# copiar el contenido de la carpeta modules a la carpeta node_modules
+RUN cp -r modules node_modules
 
 CMD ["npm", "start"]
