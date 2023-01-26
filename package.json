@@ -7,7 +7,7 @@
     "pre-copy": "cd .. && yarn run copy.lib base-wweb-memory",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "localModules": "cp -r ../modules/* node_modules",
+    "localModules": "cp -r ./modules/* node_modules",
     "pm2": "pm2 start app.js --exp-backoff-restart-delay=100",
     "pm2-docker": "pm2-runtime start app.js --exp-backoff-restart-delay=100"
   },
@@ -20,7 +20,10 @@
     "@bot-whatsapp/cli": "latest",
     "@bot-whatsapp/database": "latest",
     "@bot-whatsapp/provider": "latest",
-    "@bot-whatsapp/portal": "latest"
+    "@bot-whatsapp/portal": "latest",
+    "@adiwajshing/baileys": "4.4.0",
+    "mime-types": "2.1.35",
+    "wa-sticker-formatter": "4.3.2"
   },
   "author": "",
   "license": "ISC",

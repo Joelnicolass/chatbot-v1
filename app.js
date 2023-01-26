@@ -1,7 +1,7 @@
 const { createBot, createProvider, createFlow } = require("@bot-whatsapp/bot");
 
 const QRPortalWeb = require("@bot-whatsapp/portal");
-const WebWhatsappProvider = require("@bot-whatsapp/provider/web-whatsapp");
+const WebWhatsappProvider = require("@bot-whatsapp/provider/baileys");
 const MockAdapter = require("@bot-whatsapp/database/mock");
 
 const flowAdivinar = require("./flows/flowAdivinar");
@@ -20,4 +20,4 @@ const main = async () => {
   QRPortalWeb();
 };
 
-main()
+main();
