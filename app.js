@@ -6,6 +6,7 @@ const MockAdapter = require("@bot-whatsapp/database/mock");
 
 const flowAdivinar = require("./flows/flowAdivinar");
 const flowGatito = require("./flows/flowGatito");
+const multiThread = require("./core/multithread");
 
 const main = async () => {
   const adapterDB = new MockAdapter();
@@ -19,4 +20,4 @@ const main = async () => {
   QRPortalWeb();
 };
 
-main();
+multiThread(main);
