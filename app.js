@@ -20,4 +20,4 @@ const main = async () => {
   QRPortalWeb();
 };
 
-multiThread(main);
+main()
