@@ -1,152 +1,91 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
+    remoteJid: '5493764861704@s.whatsapp.net',
     fromMe: false,
-    id: '5E1C569C5B2A97B6242C9F3A4D7A9612',
+    id: '3EB05D910892DD09B0D7',
     participant: undefined
   },
-  messageTimestamp: 1674753787,
-  pushName: 'Enzo Hilgert',
+  messageTimestamp: 1674786646,
+  pushName: 'Joel Nicolas Sartori',
   message: Message {
-    conversation: 'Adivinar',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
+    },
+    buttonsResponseMessage: ButtonsResponseMessage {
+      selectedButtonId: 'id-btn-3',
+      selectedDisplayText: '4 - DRACOZOLT',
+      contextInfo: [ContextInfo],
+      type: 1
     }
   },
-  body: 'Adivinar',
-  from: '5493764325387'
+  body: '4 - DRACOZOLT',
+  from: '5493764861704'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
+    remoteJid: '5493764861704@s.whatsapp.net',
     fromMe: false,
-    id: '469784E01658158676CD1726464BFB7A',
+    id: '3EB06357D20331E624CA',
     participant: undefined
   },
-  messageTimestamp: 1674753801,
-  pushName: 'Enzo Hilgert',
+  messageTimestamp: 1674786654,
+  pushName: 'Joel Nicolas Sartori',
   message: Message {
-    conversation: 'Gardevoir',
+    conversation: 'adivinar',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Gardevoir',
-  from: '5493764325387'
+  body: 'adivinar',
+  from: '5493764861704'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
+    remoteJid: '5493764861704@s.whatsapp.net',
     fromMe: false,
-    id: 'A4F3D3CFEA3D5E6BA5BE21602A2116F6',
+    id: '3EB0EBC092282A2F12EA',
     participant: undefined
   },
-  messageTimestamp: 1674753939,
-  pushName: 'Enzo Hilgert',
+  messageTimestamp: 1674786663,
+  pushName: 'Joel Nicolas Sartori',
   message: Message {
-    conversation: 'Adivinar',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
+    },
+    buttonsResponseMessage: ButtonsResponseMessage {
+      selectedButtonId: 'id-btn-1',
+      selectedDisplayText: '2 - SIRFETCHD',
+      contextInfo: [ContextInfo],
+      type: 1
     }
   },
-  body: 'Adivinar',
-  from: '5493764325387'
+  body: '2 - SIRFETCHD',
+  from: '5493764861704'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
+    remoteJid: '5493764861704@s.whatsapp.net',
     fromMe: false,
-    id: '23E0284B579A2ED1A53641B7FE9E4E0C',
+    id: '3EB09E3EF1BB3A5B382A',
     participant: undefined
   },
-  messageTimestamp: 1674753946,
-  pushName: 'Enzo Hilgert',
+  messageTimestamp: 1674786668,
+  pushName: 'Joel Nicolas Sartori',
   message: Message {
-    conversation: 'Ala mierda',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
+    },
+    buttonsResponseMessage: ButtonsResponseMessage {
+      selectedButtonId: 'id-btn-2',
+      selectedDisplayText: '3 - VENOMOTH',
+      contextInfo: [ContextInfo],
+      type: 1
     }
   },
-  body: 'Ala mierda',
-  from: '5493764325387'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
-    fromMe: false,
-    id: '4C39BFC1F9B1840D6CB863E5EFA0C44A',
-    participant: undefined
-  },
-  messageTimestamp: 1674753952,
-  pushName: 'Enzo Hilgert',
-  message: Message {
-    conversation: 'Milcery',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'Milcery',
-  from: '5493764325387'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
-    fromMe: false,
-    id: '330BE371928BF51A06B88343E535B0FA',
-    participant: undefined
-  },
-  messageTimestamp: 1674753955,
-  pushName: 'Enzo Hilgert',
-  message: Message {
-    conversation: 'Tiene que ser',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'Tiene que ser',
-  from: '5493764325387'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
-    fromMe: false,
-    id: '6593EE2EF87E86E169C4E6326D942569',
-    participant: undefined
-  },
-  messageTimestamp: 1674753969,
-  pushName: 'Enzo Hilgert',
-  message: Message {
-    conversation: 'We no le erro 1, que bronca',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'We no le erro 1, que bronca',
-  from: '5493764325387'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5493764325387@s.whatsapp.net',
-    fromMe: false,
-    id: 'A9337E7FA02973CD277DC0534362249C',
-    participant: undefined
-  },
-  messageTimestamp: 1674753971,
-  pushName: 'Enzo Hilgert',
-  message: Message {
-    conversation: 'Dea',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'Dea',
-  from: '5493764325387'
+  body: '3 - VENOMOTH',
+  from: '5493764861704'
 }

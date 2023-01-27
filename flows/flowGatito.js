@@ -28,9 +28,7 @@ const flowGatito = addKeyword(["gatito", "pokemon"]).addAnswer(
         body: mensajes[getServiceKey(ctx.body, services)] || "Cargando...",
       },
       {
-        body: {
-          media,
-        },
+        media,
       },
     ]);
   }
