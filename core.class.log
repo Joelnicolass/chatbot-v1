@@ -1,0 +1,219 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: '152E08E87C7C52EAA52AF35D0C1D925B',
+    participant: undefined
+  },
+  messageTimestamp: 1674786987,
+  pushName: 'Matías Sartori',
+  message: Message {
+    conversation: 'Adivinar',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Adivinar',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493755541226@s.whatsapp.net',
+    fromMe: false,
+    id: '785B01D52A1CAE93613DCC8C32F3D635',
+    participant: undefined
+  },
+  messageTimestamp: 1674786999,
+  pushName: 'Luis Sartori',
+  message: Message {
+    conversation: 'Buenoo descansa mañana me contas',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Buenoo descansa mañana me contas',
+  from: '5493755541226'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: 'E6EC22ABBDF43A640563630465441126',
+    participant: undefined
+  },
+  messageTimestamp: 1674787000,
+  pushName: 'Matías Sartori',
+  message: Message {
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    },
+    buttonsResponseMessage: ButtonsResponseMessage {
+      selectedButtonId: 'id-btn-2',
+      selectedDisplayText: '3 - GOLETT',
+      contextInfo: [ContextInfo],
+      type: 1
+    }
+  },
+  body: '3 - GOLETT',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493755541226@s.whatsapp.net',
+    fromMe: false,
+    id: 'F941C0B9AE07FE4272E57DD6AF695D0B',
+    participant: undefined
+  },
+  messageTimestamp: 1674787004,
+  pushName: 'Luis Sartori',
+  message: Message {
+    conversation: 'Te quierooo',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Te quierooo',
+  from: '5493755541226'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: '5C7B9F0227E9C1C9E04F66171751804A',
+    participant: undefined
+  },
+  messageTimestamp: 1674787006,
+  pushName: 'Matías Sartori',
+  message: Message {
+    conversation: 'Uh',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Uh',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: 'D40F4CB96B1D7EE62EF0CF68C38A4A89',
+    participant: undefined
+  },
+  messageTimestamp: 1674787010,
+  pushName: 'Matías Sartori',
+  message: Message {
+    conversation: 'Mejoro',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Mejoro',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: '0EEE711827D079C9EA38ECD10B44EF79',
+    participant: undefined
+  },
+  messageTimestamp: 1674787012,
+  pushName: 'Matías Sartori',
+  message: Message {
+    conversation: 'Jajajaja',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Jajajaja',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: '044EDDF36D91B775E3797FA38F7C9374',
+    participant: undefined
+  },
+  messageTimestamp: 1674787018,
+  pushName: 'Matías Sartori',
+  message: Message {
+    conversation: 'Esta buenísimo',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Esta buenísimo',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: 'A88A21ECAE45A1899265FC206B4968D8',
+    participant: undefined
+  },
+  messageTimestamp: 1674787021,
+  pushName: 'Matías Sartori',
+  message: Message {
+    conversation: 'Adivinar',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Adivinar',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: '3E8776737406223CAD71CFECFADAB2BF',
+    participant: undefined
+  },
+  messageTimestamp: 1674787033,
+  pushName: 'Matías Sartori',
+  message: Message {
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    },
+    buttonsResponseMessage: ButtonsResponseMessage {
+      selectedButtonId: 'id-btn-0',
+      selectedDisplayText: '1 - DEOXYS-ATTACK',
+      contextInfo: [ContextInfo],
+      type: 1
+    }
+  },
+  body: '1 - DEOXYS-ATTACK',
+  from: '5493777652349'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5493777652349@s.whatsapp.net',
+    fromMe: false,
+    id: '9C44C3064B7730E67AF2ABC02CBC15EE',
+    participant: undefined
+  },
+  messageTimestamp: 1674787041,
+  pushName: 'Matías Sartori',
+  message: Message {
+    conversation: 'Cheto',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Cheto',
+  from: '5493777652349'
+}
