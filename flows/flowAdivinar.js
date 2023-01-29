@@ -27,11 +27,6 @@ const flowAdivinar = addKeyword(["adivinar"]).addAnswer(
       {
         media: correctSprite,
       },
-    ]);
-
-    await delay(500);
-
-    flowDynamic([
       {
         body: mensajes.adivinar,
         capture: true,
@@ -42,20 +37,8 @@ const flowAdivinar = addKeyword(["adivinar"]).addAnswer(
           {
             body: `2 - ${String(names[1]).toUpperCase()}`,
           },
-        ],
-      },
-    ]);
-
-    flowDynamic([
-      {
-        body: mensajes.adivinar,
-        capture: true,
-        buttons: [
           {
             body: `3 - ${String(names[2]).toUpperCase()}`,
-          },
-          {
-            body: `4 - ${String(names[3]).toUpperCase()}`,
           },
         ],
       },

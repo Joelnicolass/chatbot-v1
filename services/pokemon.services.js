@@ -42,7 +42,7 @@ getRandomFromArr = (arr, quantity) => {
 
 const getQuiz = async () => {
   const pokemons = await getAllPokemon();
-  const randomPokemons = getRandomFromArr(pokemons, 4);
+  const randomPokemons = getRandomFromArr(pokemons, 3);
 
   const dataPokemons = await Promise.all(
     randomPokemons.map((pokemon) => getPokemonData(pokemon))
