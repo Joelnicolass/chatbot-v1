@@ -29,6 +29,8 @@ const flowAdivinar = addKeyword(["adivinar"]).addAnswer(
       },
     ]);
 
+    await delay(500);
+
     flowDynamic([
       {
         body: mensajes.adivinar,
@@ -40,6 +42,15 @@ const flowAdivinar = addKeyword(["adivinar"]).addAnswer(
           {
             body: `2 - ${String(names[1]).toUpperCase()}`,
           },
+        ],
+      },
+    ]);
+
+    flowDynamic([
+      {
+        body: mensajes.adivinar,
+        capture: true,
+        buttons: [
           {
             body: `3 - ${String(names[2]).toUpperCase()}`,
           },
